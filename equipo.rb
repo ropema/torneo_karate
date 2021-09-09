@@ -5,7 +5,10 @@ class Equipo
     	@codigo=codigo;
         @nombre=nombre;
         @participantes=Array.new;
-        @puntaje_total=puntaje_total;
+        @puntaje_total=0;
     end
-
+    def cargar_participante(codigo,nombre,edad,dni,cinturon,partidas_ganadas,partidas_empatadas,partidas_perdidas)
+    	participante=Participante.new(codigo,nombre,edad,dni,cinturon,partidas_ganadas,partidas_empatadas,partidas_perdidas);
+    	@participantes.push(participante);
+    end
 end

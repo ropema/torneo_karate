@@ -3,7 +3,7 @@ require_relative 'participante'
 RSpec.describe "Participante" do
     context '1 Initialize class Participante' do
         before(:each) do
-            @participante = Participante.new('001','Juan Cisternas','25','17650788-6','cafe',3,2,2)
+            @participante = Participante.new('001','Juan Cisternas','25','25788-7','cafe',3,2,2)
         end
         it '1.1 Instance class Participante' do
             expect(@participante).to be_an_instance_of(Participante)
@@ -18,16 +18,22 @@ RSpec.describe "Participante" do
             expect(@participante.edad).to eq('25')
         end
         it '1.5 Variable Instance dni' do
-            expect(@participante.dni).to eq('17650788-6')
+            expect(@participante.dni).to eq('25788-7')
         end
-        it '1.6 Variable Instance partidas_ganadas' do
+        it '1.6 Variable Instance cinturon' do
+            expect(@participante.cinturon).to eq('cafe')
+        end
+        it '1.7 Variable Instance partidas_ganadas' do
             expect(@participante.partidas_ganadas).to eq(3)
         end
-        it '1.7 Variable Instance partidas_empatadas' do
+        it '1.8 Variable Instance partidas_empatadas' do
             expect(@participante.partidas_empatadas).to eq(2)
         end
-        it '1.8 Variable Instance partidas_perdidas' do
+        it '1.9 Variable Instance partidas_perdidas' do
             expect(@participante.partidas_perdidas).to eq(2)
+        end
+        it '1.10 Variable Instance puntaje' do
+            expect(@participante.puntaje).to eq(18)
         end
     end
 end
