@@ -18,13 +18,11 @@ RSpec.describe "Equipo" do
     context '2 Load of participantes' do
         it 'Load one participante' do
             equipo=Equipo.new('E01','rojo')
-            participante=Participante.new('001','Juan Cisternas','25','17650788-6','cafe',3,2,2)
             equipo.cargar_participante('001','Juan Cisternas','25','17650788-6','cafe',3,2,2)
             expect(equipo.participantes[0].codigo).to eq('001')
         end
         it 'Change Variable Instance puntaje_total' do
             equipo=Equipo.new('E01','rojo')
-            participante=Participante.new('001','Juan Cisternas','25','17650788-6','cafe',3,2,2)
             equipo.cargar_participante('001','Juan Cisternas','25','17650788-6','cafe',3,2,2)            
             expect(equipo.puntaje_total).to eq(18)
         end
